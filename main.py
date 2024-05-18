@@ -4,7 +4,7 @@
 host_file_path = r'C:\\Windows\\System32\\drivers\\etc\\hosts' 
 
 # Function to block websites
-import subprocess
+import subprocess, os
 
 # Function to block websites
 def block_websites():
@@ -91,13 +91,14 @@ def main():
         "\nPlease enter an option:"
         )
     print("1. Unblock\n2. Block\n")
-    choice = int(input("Enter your choice: "))
-    if choice == 1:
+    choice = str(input("Enter your choice: "))
+    if choice == '1':
         unblock_websites()
-    elif choice == 2:
+    elif choice == '2':
         block_websites()
     else:
-        print("Invalid option\nRestarting...")
+        os.system('cls')
+        print("Invalid option\nRestarting...\n")
         main()
     input("Done ")
 
