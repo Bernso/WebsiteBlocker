@@ -1,7 +1,7 @@
 
 
 # Path to the host file
-host_file_path = 'C:\\Windows\\System32\\drivers\\etc\\hosts'  # Corrected path
+host_file_path = r'C:\\Windows\\System32\\drivers\\etc\\hosts' 
 
 # Function to block websites
 import subprocess
@@ -83,13 +83,23 @@ blocked_websites = [
     "www.twitter.com"
 ]
 
+def main():
+    print(
+        "Information:\n"
+        "- This must be run in admin mode for the websites to be blocked.\n"
+        "- This is because the file that this script needs to edit is very important.\n"
+        "\nPlease enter an option:"
+        )
+    print("1. Unblock\n2. Block\n")
+    choice = int(input("Enter your choice: "))
+    if choice == 1:
+        unblock_websites()
+    elif choice == 2:
+        block_websites()
+    else:
+        print("Invalid option\nRestarting...")
+        main()
+    input("Done ")
 
-# Example usage
-print("1. Unblock\n2. Block\n")
-choice = int(input("Enter your choice: "))
-if choice == 1:
-    unblock_websites()
-else:
-    block_websites()
-
-input("Done")
+if __name__ == '__main__':
+    main()
