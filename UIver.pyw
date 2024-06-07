@@ -74,6 +74,9 @@ app.bind("1", lambda self: block_websites())
 app.bind("2", lambda self: unblock_websites())
 
 
+currentWebsitesToBlockButton = ctk.CTkButton(app, text="View current websites to be blocked", command=lambda: messagebox.showinfo("Websites", f"{websitesToBlock}"), width=380)
+currentWebsitesToBlockButton.place(x=0, y=173)
+
 title = ctk.CTkLabel(app, text="Website Blocker", font=("helvetica", 20, "bold"))
 title.pack(padx=10, pady=10)
 
