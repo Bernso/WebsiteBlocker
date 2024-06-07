@@ -104,5 +104,5 @@ if __name__ == '__main__':
         print("True")
     else:
         print("False")
-        quit()
+        os._exit(0)
     app.mainloop()
